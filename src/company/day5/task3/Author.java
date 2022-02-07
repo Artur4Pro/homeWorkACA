@@ -11,6 +11,11 @@ public class Author {
         this.gender = gender;
     }
 
+    public Author(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
     public void write() {
         System.out.println("Author : " + name + " " + email + " " +gender);
     }

@@ -16,7 +16,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public void write(){
-        System.out.println("Person : " +id+" "+name+" "+department+" "+age+" "+gender);
+    public void employeeInfo() {
+        System.out.println("Person : " + id + " " + name + " " + department + " " + age + " " + gender);
     }
 }

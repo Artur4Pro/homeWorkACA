@@ -13,11 +13,11 @@ public class Book {
         this.price = price;
     }
 
-    public void bookInfo(){
-        System.out.println("Book : author : "+author.name + name +" - "+price );
+    public void bookInfo() {
+        System.out.println("Book : author : " + author.name + " " + name + " - " + price);
     }
 
-    public void authorInfo(){
-        System.out.println("Author name : "+ author.name+", eMail : " +author.email);
+    public void authorInfo() {
+        System.out.println("Author name : " + author.name + ", eMail : " + author.email);
     }
 }

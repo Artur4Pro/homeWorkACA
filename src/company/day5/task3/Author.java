@@ -5,7 +5,7 @@ public class Author {
     public String email;
     public char gender;
 
-    public Author(String name, String email , char gender) {
+    public Author(String name, String email, char gender) {
         this.name = name;
         this.email = email;
         this.gender = gender;
@@ -16,7 +16,7 @@ public class Author {
         this.email = email;
     }
 
-    public void write() {
-        System.out.println("Author : " + name + " " + email + " " +gender);
+    public void personAllInfo() {
+        System.out.println("Author : " + name + " " + email + " " + gender);
     }
 }

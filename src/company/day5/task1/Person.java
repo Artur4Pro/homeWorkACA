@@ -24,7 +24,7 @@ public class Person {
     }
 
 
-    public void write() {
+    public void personInfo() {
         System.out.println("Person name : " + name + ", age : " + age + ", address : " + address);
     }
 }

@@ -1,8 +1,8 @@
-package day3;
+package company.day3;
 
 import java.util.Scanner;
 
-public class HomeWork3 {
+public class Day3 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

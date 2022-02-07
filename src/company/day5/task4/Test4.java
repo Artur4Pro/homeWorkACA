@@ -10,9 +10,9 @@ public class Test4 {
         Book book = new Book("Dream", author, 1900);
         Book book1 = new Book("Aprel", author, 9000);
 
-        book.bookInfo();
+        book.info();
         book.authorInfo();
-        book1.bookInfo();
+        book1.info();
         book1.authorInfo();
     }
 }

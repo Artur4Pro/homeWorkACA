@@ -257,9 +257,8 @@ public class Main {
          *  b) a = 3; a = a + 3; b = 2; result = a – b; -> result is 4
          *  c) a = 2; b = a + 1; a = b + 2; result = a + b + a; result = -result; -> result is -13
          *  d) a = 3; b = 11; result = (b % a) + 1; -> result is 3
-         *  e) a = 3; b = a++; result = 1; result += a – b; -> result is -1
+         *  e) a = 3; b = a++; result = 1; result += a – b; -> result is 2
          */
-
 
     }
 }

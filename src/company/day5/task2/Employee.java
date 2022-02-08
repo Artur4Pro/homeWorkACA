@@ -17,15 +17,43 @@ public class Employee {
     int age;
     char gender;
 
+    int salary;
+    float rating;
+    static  int count;
+
+    public Employee() {
+        count++;
+    }
+
+    public Employee(int salary, float rating) {
+        this.salary = salary;
+        this.rating = rating;
+        count++;
+    }
+
+    public Employee(int id, String name, String department, int age, char gender, int salary, float rating) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.age = age;
+        this.gender = gender;
+        this.salary = salary;
+        this.rating = rating;
+        count++;
+    }
+
+
+
     public Employee(int id, String name, String department, int age, char gender) {
         this.id = id;
         this.name = name;
         this.department = department;
         this.age = age;
         this.gender = gender;
+        count++;
     }
 
-    public void employeeInfo() {
-        System.out.println("Person : " + id + " " + name + " " + department + " " + age + " " + gender);
+    public void infoAbout() {
+        System.out.println("Person : {" + id + " " + name + " " + department + " " + age + " " + gender + " " + salary + " " +rating + "   " + count+" }");
     }
 }

@@ -1,6 +1,14 @@
 package company.day5.task3;
 
 public class Author {
+    /**
+     * Define Author class which
+     * Has  fields name, email, gender
+     * define all argument constructor
+     * write method which will print all information about  Author
+     * create an instance of Author and print all info about him
+     */
+    
     public String name;
     public String email;
     public char gender;

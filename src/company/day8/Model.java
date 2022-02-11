@@ -68,5 +68,27 @@ public class Model {
 
         System.out.println("\n____________________________\n");
 
+        System.out.println("Please enter 2 cordination for x and 2 cordination for y ");
+        System.out.println(controller.task13(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt()));;
+
+        System.out.println("\n____________________________\n");
+
+        System.out.println("Please enter 3 sides of triangle ");
+        controller.task14(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+
+        System.out.println("\n____________________________\n");
+
+        System.out.println("Please enter 3 numbers for detecting count of equals numbers ");
+        System.out.println(controller.task15(scanner.nextInt(), scanner.nextInt(), scanner.nextInt()));
+
+        System.out.println("\n____________________________\n");
+
+        System.out.println("Enter 3 numbers ");
+        controller.task16(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+
+        System.out.println("\n____________________________\n");
+
+        System.out.println("PLease enter 3 numbers ");
+        controller.task17(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
     }
 }

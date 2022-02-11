@@ -37,7 +37,7 @@ public class Controller {
      */
 
     public int task3() {
-        int randomNumber = (int) (Math.random() * (7 - 2) + 2);
+        int randomNumber = (int) (Math.random() * 6 + 2);
         return randomNumber;
     }
 
@@ -235,9 +235,20 @@ public class Controller {
         }
     }
 
+    /**
+     * Task 12
+     * Input int values a and b from console
+     * if one of them is multiple of 7, and both positive, and a greater than b, print all odd values between them
+     * else print all even values between them
+     */
     public void task12(int a, int b) {
         if ((a % 7 == 0 || b % 7 == 0) && a >= 0 && b >= 0 && a > b) {
-            int y = b + 1;
+            int y = b;
+            if (b % 2 == 0) {
+                ++y;
+            } else {
+                y += 2;
+            }
             while (y < a) {
                 System.out.println(y);
                 y += 2;
@@ -267,6 +278,131 @@ public class Controller {
             }
         }
     }
+
+    /**
+     * Task 13
+     * Given coordinates of two points in the coordinate plane.Write java program to check if the points lie in the same plane?(quarter)
+     * Print In the same quarter , else print Not in the same quarter.
+     * Input 4 coordinates from console, all 4 coordinates != 0.
+     */
+
+    public boolean task13(int a, int b, int c, int d) {
+        return ((a > 0 == c > 0) && (b > 0 == d > 0));
+    }
+
+    /**
+     * task 14
+     * Given 3 positive numbers different from 0, Determine if there is a non-degenerate triangle with such sides.
+     * Input numbers from console
+     */
+
+    public void task14(int x, int y, int z) {
+        if (x + y >= z && x + z >= y && y + z >= x) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+
+    /**
+     * Task 15
+     * Given 3 numbers, print count of numbers that equals to each other.(Input numbers from console)Example`
+     * Input numbers`
+     * 3
+     * 1
+     * 3
+     * Output`2
+     */
+
+    public int task15(int x, int y, int z) {
+        if (x == y && y == z) {
+            return 3;
+        } else if (x == y || x == z || y == z) {
+            return 2;
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * Task 16
+     * Given 3 real numbers a , b , c .FInd all decisions for
+     * ax2 + bx + c = 0.Print all decisions, if there is not a decision ,print “Can't be”.
+     */
+
+    public void task16(int a, int b, int c) {
+        double x1;
+        double x2;
+        boolean logic = false;
+        double D = b * b - 4 * a * c;
+        if (D >= 0) {
+
+            x1 = (-b + Math.sqrt(D)) / 2 * a;
+            System.out.println("X1 value is : " + x1);
+
+            x2 = (-b - Math.sqrt(D)) / 2 * a;
+            System.out.println("X2 value is : " + x2);
+
+        } else System.out.println("Can't be: " + logic);
+    }
+
+    /**
+     * Task 17
+     * 15.Given 3 integer values arrange them in non-decreasing order. a<= b <= c.
+     * Example`
+     * Input
+     * 3
+     * 1
+     * 1
+     * Output
+     * 1
+     * 1
+     * 3
+     */
+
+    public void task17(int a, int b, int c) {
+        int max, min, med;
+        if (a > b) {
+            if (a > c) {
+                max = a;
+                if (b > c) {
+                    med = b;
+                    min = c;
+                } else {
+                    med = c;
+                    min = b;
+                }
+            } else {
+                med = a;
+                if (b > c) {
+                    max = b;
+                    min = c;
+                } else {
+                    max = c;
+                    min = b;
+                }
+            }
+        } else {
+            if (b > c) {
+                max = b;
+                if (a > c) {
+                    med = a;
+                    min = c;
+                } else {
+                    med = c;
+                    min = a;
+                }
+            } else {
+                med = b;
+                max = c;
+                min = a;
+            }
+        }
+        System.out.println("sorted number \n" + min + "\n" + med + "\n" + max);
+    }
 }
+
+
+
 
 

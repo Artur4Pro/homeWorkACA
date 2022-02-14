@@ -106,8 +106,7 @@ public class Controller1 {
      */
 
     public int task8(int a, int b, int c) {
-        return (a > b && a > c ? a : b > a && b > c ? b : c > a && c > b ? c :
-                a == b && a > c ? a : b == c && b > a ? c : 111111111);
+        return task5(a, b) >= task5(b, c) ? task5(a, b) : task5(b, c);
     }
 
     /**
@@ -117,18 +116,9 @@ public class Controller1 {
      * in case of illegal choice print “Invalide choice”.
      */
 
-    public void task9() {
-        System.out.println("What is the correct way to declare a variable to store an integer value in Java?\n");
-        System.out.println(" a. int 1x=10;\n" +
-                " b. int x=10;\n" +
-                " c. float x=10.0f;\n" +
-                " d. string x=\"10\";\n");
-
-        System.out.println("Please enter your answer ");
-
-        String s = scanner.next();
-        switch (s) {
-            case "c":
+    public void task9(char x) {
+        switch (x) {
+            case 'c', 'C':
                 System.out.println("Congratulation");
                 break;
             default:
@@ -141,9 +131,14 @@ public class Controller1 {
      * Write Java Program to check Vowel or Consonant using Switch Case.
      */
 
-    public void task10(String a) {
-        switch (a) {
-            case "a", "e", "i", "o", "u", "A", "E", "I", "O", "U" -> System.out.println(a + " is  a Vowel");
+    public void task10(char a) {
+        char b = 0;
+        if (a >= 65 && a <= 90 || a >= 97 && a <= 122) {
+            b = a;
+        }
+        switch (b) {
+            case 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' -> System.out.println(a + " is  a Vowel");
+            case 0 -> System.out.println("Wrong char");
             default -> System.out.println(a + " isn't  a Vowel");
         }
     }
@@ -188,9 +183,24 @@ public class Controller1 {
      * the selected operation on the entered numbers using switch case.
      */
 
-    public void task13(double a, String operation, double b) {
+    public void task13(double a, double b) {
+        String str = scanner.next();
+        char d = 0;
+        if (str.length() > 1) {
+            System.out.println("Wrong character");
+        } else {
+            if (str.charAt(0)==42) {
+            } d = str.charAt(0);
+        }
+
+
+        if (b == 0) {
+            System.out.println("Tivy 0 vra chi kareli bajanel Jana");
+            return;
+        }
+        //42 43 45 47
         double output = 0;
-        switch (operation) {
+        switch (b) {
             case "+" -> output = a + b;
             case "-" -> output = a - b;
             case "/" -> output = a / b;
@@ -200,7 +210,7 @@ public class Controller1 {
                 return;
             }
         }
-        System.out.println(a + " " + operation + " " + b + " = " + output);
+        System.out.println(a + " " + b + " " + b + " = " + output);
     }
 
     /**
@@ -212,7 +222,7 @@ public class Controller1 {
     public void task14(int a) {
         int b = a;
         if (a > 7) {
-            b = a / 7 + 1;
+            b = a % 7 ;
         }
         String weekDay = "";
         switch (b) {

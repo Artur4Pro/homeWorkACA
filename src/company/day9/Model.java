@@ -99,7 +99,7 @@ public class Model {
 //        if (str.length()>1){
 //            System.out.println("Wrong character");
 //        }else {d=str.charAt(0);}
-        controller.task13(scanner.nextInt(), scanner.next(), scanner.nextInt());
+        controller.task13(scanner.nextDouble(),scanner.nextDouble());
 
         System.out.println("\n____________________________\n");
 

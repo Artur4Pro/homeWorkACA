@@ -39,7 +39,7 @@ public class Controller {
      */
     public void task3(int a) {
         int num = 1;
-        while (num * num < Math.abs(a)) {
+        while (num * num <= a ) {
             System.out.print(num * num + " , ");
             ++num;
         }
@@ -54,6 +54,7 @@ public class Controller {
         int z = 2;
         while (x % z != 0) {
             ++z;
+            System.out.println(z);
         }
         return z;
     }
@@ -65,9 +66,9 @@ public class Controller {
      */
     public void task5(int n) {
         int m = 1;
-        while (m * 2 < n) {
-            System.out.print(m * 2 + " ");
-            m *= 2;
+        while (m <= n) {
+            System.out.print(m  + " ");
+            m <<= 1;
         }
     }
 
@@ -89,7 +90,7 @@ public class Controller {
      */
     public void task7(int n) {
         int m = n;
-        if (!(m % 2 == 0)) {
+        if (m % 2 != 0) {
             m--;
         }
         while (m >= 2) {
@@ -118,11 +119,11 @@ public class Controller {
         int count = 0;
         while (true) {
             int z = scanner.nextInt();
+            count++;
             if (squareOf2(z)) {
                 System.out.print(z + " ");
                 break;
             }
-            count++;
         }
         System.out.println(count);
     }
@@ -133,13 +134,13 @@ public class Controller {
      * Math.pow(2,k)≥N.(You can not use Math.pow())
      */
     public int task9(int n) {
-        int k = 1;
-        int count = 0;
-        while (k < n) {
-            k *= 2;
-            count++;
+        int num = 1;
+        int k = 0;
+        while (num < n) {
+            num *= 2;
+            k++;
         }
-        return count;
+        return k;
     }
 
     /**
@@ -157,7 +158,7 @@ public class Controller {
             System.out.print(ch + " ");
             start++;
             if (start % 10 == 2) {
-                System.out.println("\n");
+                System.out.print("\n");
             }
 
         }
@@ -188,16 +189,16 @@ public class Controller {
      */
 
     public int task12(int a) {
-        int v = 0;
-        int b = 1;
+        int firstNum = 0;
+        int secondNum = 1;
         int n = 3;
-        while (!(v + b > a)) {
-            if (v + b == a) {
+        while (!(firstNum + secondNum > a)) {
+            if (firstNum + secondNum == a) {
                 return n;
             }
-            int g = b;
-            b += v;
-            v = g;
+            int temp = secondNum;
+            secondNum += firstNum;
+            firstNum = temp;
             n++;
         }
         return -1;

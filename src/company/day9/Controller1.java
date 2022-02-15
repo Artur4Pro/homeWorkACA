@@ -200,11 +200,11 @@ public class Controller1 {
         }
         //42 43 45 47
         double output = 0;
-        switch (b) {
-            case "+" -> output = a + b;
-            case "-" -> output = a - b;
-            case "/" -> output = a / b;
-            case "*" -> output = a * b;
+        switch (d) {
+            case '+' -> output = a + b;
+            case '-' -> output = a - b;
+            case '/' -> output = a / b;
+            case '*' -> output = a * b;
             default -> {
                 System.out.println("wrong operation or number");
                 return;

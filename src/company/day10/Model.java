@@ -51,9 +51,9 @@ public class Model {
 //
 //        System.out.println();
 //
-//        System.out.println(controller.task12(scanner.nextInt()));
+        System.out.println(controller.task12(scanner.nextInt()));
 
-        System.out.println();
+//        System.out.println();
 
 
     }

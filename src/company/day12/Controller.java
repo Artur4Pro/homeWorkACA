@@ -250,10 +250,22 @@ public class Controller {
         printArray(a);
     }
 
-    /**Task 12
+    /**
+     * Task 12
      * Cycle the elements of the array to the right (A [0] goes to A [1], A [1] to A [2], ..., the last element goes to A [0]).
      * Example ` Input `   1 2 3 4 5
-     *                  Output ` 5 1 2 3 4
+     * Output ` 5 1 2 3 4
      */
 
+    public void task12(int n) {
+        int[] a = intArray(n);
+        printArray(a);
+
+        for (int i = a.length - 2; i >= 0; i--) {
+            int temp = a[i + 1];
+            a[i + 1] = a[i];
+            a[i] = temp;
+        }
+        printArray(a);
+    }
 }

@@ -164,22 +164,24 @@ public class Controller {
      */
 
     public void task10(int x) {
-
         int y = 0;
-        int g = x;
+        int g = 1;
+        int z=0;
         for (int i = x; i != 0; i /= 10) {
-            int z = 0;
-            if (g % 10 == 1) {
-                y += Math.pow(2, z);
-                z++;
-                g /= 10;
-            } else {
-                g /= 10;
-                z++;
-            }
+            z=i%10;
+            y=y+z*g;
+            g*=2;
         }
         System.out.println(y);
     }
+
+
+
+    /**
+     * Task 12
+     *
+     * @param num
+     */
 
     public void task12(int num) {
         int count = 0;
@@ -210,7 +212,7 @@ public class Controller {
     }
 
     /**
-     * Task 13
+     * Task 14
      * Write a program that prompts the user for the size (a non-negative integer in int);
      * and prints the following checkerboard pattern.
      */

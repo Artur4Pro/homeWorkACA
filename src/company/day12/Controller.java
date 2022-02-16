@@ -214,21 +214,46 @@ public class Controller {
     public void task10(int n) {
         int[] a = intArray(n);
         printArray(a);
-        int index =a.length-1;
-            for (int i = 0; i < a.length/2; i++) {
-                int temp = a[i];
-                a[i] = a[index];
-                a[index] = temp;
-                index--;
-            }
+        int index = a.length - 1;
+        for (int i = 0; i < a.length / 2; i++) {
+            int temp = a[i];
+            a[i] = a[index];
+            a[index] = temp;
+            index--;
+        }
         printArray(a);
     }
 
-    /**Task 11
+    /**
+     * Task 11
      * Rearrange the adjacent elements of the array (A [0] with A [1], A [2] with A [3], etc.).
      * If there is an odd number of elements, then the last element remains in its place.
-     *
-     * Example ` Input `   1 2 3 4 5
-     *          Output ` 2 1 4 3  5
+     * <p>
+     * Example ` Input ` 1 2 3 4 5
+     * Output ` 2 1 4 3  5
      */
+
+    public void task11(int n) {
+        int[] a = intArray(n);
+        printArray(a);
+        int length;
+        if (a.length % 2 == 0) {
+            length = a.length / 2 + 2;
+        } else {
+            length = a.length / 2 + 1;
+        }
+        for (int i = 0; i < length; i += 2) {
+            int temp = a[i];
+            a[i] = a[i + 1];
+            a[i + 1] = temp;
+        }
+        printArray(a);
+    }
+
+    /**Task 12
+     * Cycle the elements of the array to the right (A [0] goes to A [1], A [1] to A [2], ..., the last element goes to A [0]).
+     * Example ` Input `   1 2 3 4 5
+     *                  Output ` 5 1 2 3 4
+     */
+
 }

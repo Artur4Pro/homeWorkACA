@@ -236,13 +236,8 @@ public class Controller {
     public void task11(int n) {
         int[] a = intArray(n);
         printArray(a);
-        int length;
-        if (a.length % 2 == 0) {
-            length = a.length / 2 + 2;
-        } else {
-            length = a.length / 2 + 1;
-        }
-        for (int i = 0; i < length; i += 2) {
+        int length=a.length;
+        for (int i = 0; i <= length-2; i += 2) {
             int temp = a[i];
             a[i] = a[i + 1];
             a[i + 1] = temp;
@@ -260,7 +255,6 @@ public class Controller {
     public void task12(int n) {
         int[] a = intArray(n);
         printArray(a);
-
         for (int i = a.length - 2; i >= 0; i--) {
             int temp = a[i + 1];
             a[i + 1] = a[i];
@@ -268,4 +262,45 @@ public class Controller {
         }
         printArray(a);
     }
+
+    /**
+     * Task 13
+     * In the list, all items are different. Swap the minimum and maximum elements of this list.
+     * Example ` Input ` 3 2 1 4 5
+     * Output ` 3 2 5 4 1
+     */
+
+    public void task13(int n) {
+        int[] a = intArray(n);
+        printArray(a);
+        int idx1 = 0;
+        int idx2 = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > a[idx1]) {
+                idx1 = i;
+            }
+            if (a[i] < a[idx2]) {
+                idx2 = i;
+            }
+        }
+        int temp = a[idx1];
+        a[idx1] = a[idx2];
+        a[idx2] = temp;
+        printArray(a);
+    }
+
+    /**Task 14
+     * You are given an array of numbers and the index of an element in the array. Index is k. Remove the element with index k from the list by moving all elements to the right of the element with index k to the left.
+     *
+     * The program should shift directly in the array, and not do it when displaying elements. Also, you cannot use an additional array.
+     *
+     * At least decrement size of array, and print array;
+     *
+     * Example` Input` 1 2 3 4 5  Output` 1 2 4 5
+     *                            2
+     */
+
+//    public void
+
+
 }

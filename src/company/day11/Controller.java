@@ -175,6 +175,32 @@ public class Controller {
         System.out.println(y);
     }
 
+    /**Task 11
+     * 11.Enter the number N, followed by N integers.
+     *
+     * - Count how many zeros, positive numbers, negative numbers
+     * among the given N numbers.
+     *
+     * - It is necessary to print first the number of zeros, then the number
+     * of positive and negative numbers.
+     */
+
+    public void task11(int n){
+        int zero = 0;
+        int positive = 0;
+        int negative = 0;
+        for (int i = 1; i <= n; i++) {
+            int x = scanner.nextInt();
+            if (x<0){
+                negative++;
+            }else if (x>0){
+                positive++;
+            }else {
+                zero++;
+            }
+        }
+        System.out.println("zero - "+zero +" , positive - "+positive+" , negative - "+negative);
+    }
 
 
     /**

@@ -23,9 +23,9 @@ public class Model {
 
 //        System.out.println(controller.task9());
 
-        controller.task10(1001);
+//        controller.task10(1001);
 
-
+controller.task11(10);
 
 //        controller.task12(11);
 

@@ -47,7 +47,8 @@ public class Controller {
 
     public void task3(int a, int b) {
         if (a >= b) {
-            System.out.println("a can't be <= b");
+            System.out.println("a can't be > b");
+            return;
         }
         for (int i = a; i <= b; i++) {
             for (int j = 1; j < i; j++) {

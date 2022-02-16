@@ -290,7 +290,8 @@ public class Controller {
     }
 
     /**Task 14
-     * You are given an array of numbers and the index of an element in the array. Index is k. Remove the element with index k from the list by moving all elements to the right of the element with index k to the left.
+     * You are given an array of numbers and the index of an element in the array. Index is k.
+     * Remove the element with index k from the list by moving all elements to the right of the element with index k to the left.
      *
      * The program should shift directly in the array, and not do it when displaying elements. Also, you cannot use an additional array.
      *
@@ -299,8 +300,22 @@ public class Controller {
      * Example` Input` 1 2 3 4 5  Output` 1 2 4 5
      *                            2
      */
-
-//    public void
+//
+//    public void task14(int k){
+//        int[]a = intArray(8);
+//        printArray(a);
+//        String str = "";
+//        for (int i = 0; i <a.length ; i++) {
+//            if (i==k){
+//                continue;
+//            }
+//            str=str+a[i]+" ";
+//        }
+//        a= new int[a.length-1];
+//        for (int i = 0; i < a.length; i++) {
+//            a[i]=Integer.parseInt(str.split())
+//        }
+//    }
 
 
 }

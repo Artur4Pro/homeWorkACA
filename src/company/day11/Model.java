@@ -9,13 +9,13 @@ public class Model {
 
 //        controller.task2(2, 10, 11, 3);
 
-//        controller.task3(2,9);
+//        controller.task3(5,50);
 
 //        System.out.println(controller.task4(3333,3));
 
 //        System.out.println(controller.task5(123456));
 
-//        controller.task6(6);
+//        System.out.println(controller.task6(6));
 
 //        controller.task7(55);
 
@@ -23,9 +23,9 @@ public class Model {
 
 //        System.out.println(controller.task9());
 
-//        controller.task10(1001);
+//        System.out.println(controller.task10(1001));
 
-controller.task11(10);
+//        controller.task11(10);
 
 //        controller.task12(11);
 
@@ -33,7 +33,7 @@ controller.task11(10);
 
 //        controller.task14(5);
 
-//        controller.task15(10);
+        controller.task15(10);
     }
 }
 

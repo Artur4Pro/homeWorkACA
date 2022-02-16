@@ -46,19 +46,17 @@ public class Controller {
      */
 
     public void task3(int a, int b) {
-        if (a >= b) {
+        if (a > b) {
             System.out.println("a can't be > b");
             return;
         }
         for (int i = a; i <= b; i++) {
             for (int j = 1; j < i; j++) {
                 if (j == (double) i / j) {
-                    System.out.println(i);
+                    System.out.print(i + " ");
                 }
             }
-
         }
-
     }
 
     /**
@@ -85,9 +83,9 @@ public class Controller {
      */
 
 
-    public int task5(int num) {
+    public int task5(int x) {
         int reversed = 0;
-        for (; num != 0; num /= 10) {
+        for (int num = x; num != 0; num /= 10) {
             int digit = num % 10;
             reversed = reversed * 10 + digit;
         }
@@ -102,13 +100,17 @@ public class Controller {
      * Input`  6   Output` 2
      */
 
-    public void task6(int x) {
-        for (int i = 2; i <= x; i++) {
+    public int task6(int x) {
+        if (x % 2 == 0) {
+            return 2;
+        }
+        for (int i = 3; i * i <= x; i += 2) {
             if (x % i == 0) {
                 System.out.println(i);
-                break;
+                return i;
             }
         }
+        return x;
     }
 
     /**
@@ -119,11 +121,12 @@ public class Controller {
      */
 
     public void task7(int x) {
-        for (int i = 1; i <= x; i++) {
+        for (int i = 1; i <= x / 2; i++) {
             if (x % i == 0) {
                 System.out.print(i + " ");
             }
         }
+        System.out.print(x);
     }
 
     /**
@@ -133,8 +136,8 @@ public class Controller {
      */
 
     public int task8(int x) {
-        int count = 0;
-        for (int i = 1; i <= x; i++) {
+        int count = 1;
+        for (int i = 1; i <= x / 2; i++) {
             if (x % i == 0) {
                 count++;
             }
@@ -164,43 +167,43 @@ public class Controller {
      * 111     Output` 7
      */
 
-    public void task10(int x) {
-        int y = 0;
-        int g = 1;
-        int z=0;
+    public int task10(int x) {
+        int dec = 0;
+        int pow = 1;
+
         for (int i = x; i != 0; i /= 10) {
-            z=i%10;
-            y=y+z*g;
-            g*=2;
+            dec += pow * i % 10;
+            pow <<= 1;
         }
-        System.out.println(y);
+        return dec;
     }
 
-    /**Task 11
+    /**
+     * Task 11
      * 11.Enter the number N, followed by N integers.
-     *
+     * <p>
      * - Count how many zeros, positive numbers, negative numbers
      * among the given N numbers.
-     *
+     * <p>
      * - It is necessary to print first the number of zeros, then the number
      * of positive and negative numbers.
      */
 
-    public void task11(int n){
+    public void task11(int n) {
         int zero = 0;
         int positive = 0;
         int negative = 0;
         for (int i = 1; i <= n; i++) {
             int x = scanner.nextInt();
-            if (x<0){
+            if (x < 0) {
                 negative++;
-            }else if (x>0){
+            } else if (x > 0) {
                 positive++;
-            }else {
+            } else {
                 zero++;
             }
         }
-        System.out.println("zero - "+zero +" , positive - "+positive+" , negative - "+negative);
+        System.out.println("zero - " + zero + " , positive - " + positive + " , negative - " + negative);
     }
 
 

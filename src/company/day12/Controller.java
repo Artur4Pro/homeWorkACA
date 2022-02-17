@@ -108,9 +108,9 @@ public class Controller {
 
         System.out.println();
 
-        for (int i = 0; i < a.length - 1; i += 2) {
-            if (a[i] >= 0 && (a[i + 1] >= 0 || a[i - 1] >= 0)) {
-                System.out.print(a[i] + " ");
+        for (int i = 1; i < a.length; i += 2) {
+            if (a[i] * a[i - 1] > 0) {
+                System.out.print(a[i - 1] + " " + a[i]);
             }
         }
     }
@@ -126,16 +126,14 @@ public class Controller {
         int[] a = intArray(n);
 
         printArray(a);
-        int largest = a[0];
         int index = 0;
 
-        for (int i = 0; i < a.length; i++) {
-            if (largest < a[i]) {
-                largest = a[i];
+        for (int i = 1; i < a.length; i++) {
+            if (a[index] < a[i]) {
                 index = i;
             }
         }
-        System.out.println("The largest is " + largest + " index is " + index);
+        System.out.println("The largest is " + a[index] + " index is " + index);
     }
 
     /**
@@ -236,9 +234,10 @@ public class Controller {
     public void task11(int n) {
         int[] a = intArray(n);
         printArray(a);
-        int length=a.length;
-        for (int i = 0; i <= length-2; i += 2) {
-            int temp = a[i];
+        int temp;
+        int length = a.length;
+        for (int i = 0; i <= length - 2; i += 2) {
+            temp = a[i];
             a[i] = a[i + 1];
             a[i + 1] = temp;
         }
@@ -289,33 +288,71 @@ public class Controller {
         printArray(a);
     }
 
-    /**Task 14
+    /**
+     * Task 14
      * You are given an array of numbers and the index of an element in the array. Index is k.
      * Remove the element with index k from the list by moving all elements to the right of the element with index k to the left.
-     *
+     * <p>
      * The program should shift directly in the array, and not do it when displaying elements. Also, you cannot use an additional array.
-     *
+     * <p>
      * At least decrement size of array, and print array;
-     *
+     * <p>
      * Example` Input` 1 2 3 4 5  Output` 1 2 4 5
-     *                            2
+     * 2
      */
-//
-//    public void task14(int k){
-//        int[]a = intArray(8);
-//        printArray(a);
-//        String str = "";
-//        for (int i = 0; i <a.length ; i++) {
-//            if (i==k){
-//                continue;
-//            }
-//            str=str+a[i]+" ";
-//        }
-//        a= new int[a.length-1];
-//        for (int i = 0; i < a.length; i++) {
-//            a[i]=Integer.parseInt(str.split())
-//        }
-//    }
+
+    public void task14(int k) {
+        int[] a = intArray(8);
+        if (k<0 && k>a.length){
+            System.out.println("false k");
+            return;
+        }
+
+            printArray(a);
+        for (int i = k; i < a.length - 1; i++) {
+            a[i] = a[i + 1];
+        }
+        printArray(a);
+    }
+
+    /**
+     * Task 15
+     */
+
+    public  void task15(int n) {
+        int[] arr = intArray(n);
+        for (int i = 0; i < n; i++) {
+            boolean print = true;
+            for (int j = 0; j < n; j++) {
+                if (arr[i] == arr[j] && i != j) {
+                    print = false;
+                }
+            }
+            if (print) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+
+    /**Task 16
+     *
+     */
+    public void task16() {
+       int [] array = {1,3,0,0,0,0,0,0,5,0,6};
+       printArray(array);
+        int zeroCount = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] == 0 && array[i + 1] != 0) {
+                array[i - zeroCount] = array[i + 1];
+                array[i + 1] = 0;
+                continue;
+            }
+            if (array[i] == 0 && array[i + 1] == 0) {
+                zeroCount++;
+            }
+        }
+        printArray(array);
+    }
 
 
 }

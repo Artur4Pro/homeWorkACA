@@ -18,5 +18,6 @@ public class Model {
 //        controller.bin2Dec(str);
 //        System.out.println(controller.task12(str));
 //        System.out.println(controller.task13(str));
+
     }
 }

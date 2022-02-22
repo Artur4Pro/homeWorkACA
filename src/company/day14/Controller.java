@@ -18,8 +18,12 @@ public class Controller {
      * Write a function which returns a character of a given index,from a given String.
      * Pass as a parameters String str, int index
      */
-    public void task2(String s, int a) {
-        System.out.println(s.charAt(a));
+    public char task2(String s, int a) {
+        if (a > s.length()) {
+            System.out.println("invalid index" + a);
+            return ' ';
+        }
+        return s.charAt(a);
     }
 
     /**
@@ -65,8 +69,10 @@ public class Controller {
      */
 
     public void task5(String s) {
+        char ch = ' ';
         for (int i = s.length() - 1; i >= 0; i--) {
-            System.out.print(s.charAt(i));
+            ch = s.charAt(i);
+            System.out.print(ch);
         }
     }
 
@@ -105,8 +111,6 @@ public class Controller {
                 digitCount++;
             }
         }
-
-
         double vowalPersent = persentOf(vowalcount, length);
         double digitPersent = persentOf(digitCount, length);
 
@@ -203,7 +207,6 @@ public class Controller {
      */
 
     public boolean task10(String s) {
-        int count = 0;
         for (int i = 0; i < s.length(); i++) {
             switch (s.toLowerCase(Locale.ROOT).charAt(i)) {
                 case '0', '1', '2', '3', '4', '5', '6', '7',
@@ -226,12 +229,12 @@ public class Controller {
      * error: invalid binary string "1234"
      */
 
-    public void bin2Dec(String s) {
-        boolean isBim = checkBinStr(s);
-        if (isBim) {
+    public int bin2Dec(String s) {
+        boolean isBin = checkBinStr(s);
+        int dec = 0;
+        if (isBin) {
             int power = 0;
-            int dec = 0;
-            for (int i = s.length() - 1; i >= 0; i--) {
+            for (int i = s.length() - 1; i >= 0; i--) {//0000100101
                 if (s.charAt(i) == '1') {
                     dec += Math.pow(2, power);
                     power++;
@@ -239,11 +242,11 @@ public class Controller {
                     power++;
                 }
             }
-            System.out.println(s + " is " + dec);
-        } else {
-            System.out.print("Error: invalid binary string " + s);
-            return;
+            System.out.print(s + " is ");
+            return dec;
+
         }
+        return dec;
     }
 
     /**
@@ -255,7 +258,7 @@ public class Controller {
         int count = 0;
         String str = "";
         for (int i = 0; i < s.length(); i++) {
-            for (int j = i; j < s.length(); j++) {
+            for (int j = i+1; j < s.length(); j++) {
                 if (s.charAt(i) == s.charAt(j) && i != j)
                     if (!task3(str, s.charAt(i))) { //task 3 containi funkciana
                         str += s.charAt(i);

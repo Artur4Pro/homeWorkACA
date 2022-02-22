@@ -19,7 +19,7 @@ public class Controller {
      * Pass as a parameters String str, int index
      */
     public char task2(String s, int a) {
-        if (a > s.length()) {
+        if (a >= s.length() || a < 0) {
             System.out.println("invalid index" + a);
             return ' ';
         }
@@ -32,14 +32,12 @@ public class Controller {
      * Pass as parameters String str, char ch
      */
     public boolean task3(String a, char b) {
-        boolean c = false;
         for (int i = 0; i < a.length(); i++) {
             if (a.charAt(i) == b) {
-                c = true;
-                break;
+                return true;
             }
         }
-        return c;
+        return false;
     }
 
     /**
@@ -53,7 +51,7 @@ public class Controller {
         String str = s.toLowerCase(Locale.ROOT);
         int cout = 0;
         for (int i = 0; i < chars.length; i++) {
-            if (s.contains(chars[i])) {
+            if (str.contains(chars[i])) {
                 cout++;
             }
         }
@@ -107,7 +105,7 @@ public class Controller {
         int length = s.length();
 
         for (int i = 0; i < length; i++) {
-            if (s.charAt(i) > '0' && s.charAt(i) <= '9') {
+            if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
                 digitCount++;
             }
         }
@@ -164,11 +162,12 @@ public class Controller {
      */
 
     public boolean task8Palindrom(String s) {
+        String s1 = s.toLowerCase(Locale.ROOT);
         String str = "";
-        for (int i = s.length() - 1; i >= 0; i--) {
-            str += s.toLowerCase(Locale.ROOT).charAt(i);
+        for (int i = s1.length() - 1; i >= 0; i--) {
+            str += s1.charAt(i);
         }
-        return (str.equals(s.toLowerCase(Locale.ROOT)));
+        return (str.equals(s1));
     }
 
     /**
@@ -207,8 +206,9 @@ public class Controller {
      */
 
     public boolean task10(String s) {
-        for (int i = 0; i < s.length(); i++) {
-            switch (s.toLowerCase(Locale.ROOT).charAt(i)) {
+        String s1 = s.toLowerCase(Locale.ROOT);
+        for (int i = 0; i < s1.length(); i++) {
+            switch (s.charAt(i)) {
                 case '0', '1', '2', '3', '4', '5', '6', '7',
                         '8', '9', 'a', 'b', 'c', 'd', 'e', 'f':
                     break;
@@ -231,22 +231,23 @@ public class Controller {
 
     public int bin2Dec(String s) {
         boolean isBin = checkBinStr(s);
-        int dec = 0;
-        if (isBin) {
-            int power = 0;
-            for (int i = s.length() - 1; i >= 0; i--) {//0000100101
-                if (s.charAt(i) == '1') {
-                    dec += Math.pow(2, power);
-                    power++;
-                } else {
-                    power++;
-                }
-            }
-            System.out.print(s + " is ");
-            return dec;
-
+        if (!isBin) {
+            System.out.println("Is not binari");
+            return -1;
         }
+        int dec = 0;
+        int power = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {//0000100101
+            if (s.charAt(i) == '1') {
+                dec += Math.pow(2, power);
+                power++;
+            } else {
+                power++;
+            }
+        }
+        System.out.print(s + " is ");
         return dec;
+
     }
 
     /**
@@ -258,8 +259,8 @@ public class Controller {
         int count = 0;
         String str = "";
         for (int i = 0; i < s.length(); i++) {
-            for (int j = i+1; j < s.length(); j++) {
-                if (s.charAt(i) == s.charAt(j) && i != j)
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j))
                     if (!task3(str, s.charAt(i))) { //task 3 containi funkciana
                         str += s.charAt(i);
                         count++;

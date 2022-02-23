@@ -11,6 +11,7 @@ public class Model {
 //        System.out.println(controller.firstLetterToUpper("STRING"));
 //        controller.xo(9);
 //        System.out.println(controller.geoProgress(3.2,1.5,4));
-        controller.task9(49);
+//        controller.task9(49);
+//        controller.matrix(4,5);
     }
 }

@@ -189,6 +189,27 @@ public class Controller {
         }
         System.out.println(out.toString() + n);
     }
+
+    /**
+     * Task 10
+     * Two numbers n and m are given. Create a two-dimensional array A [n] [m], fill it with the multiplication table
+     * A [i] [j] = i * j and display it. In this case, you cannot use nested loops,
+     * the entire filling of the array must be done in one cycle.
+     * Example` Input` 3   3
+     */
+
+    public void matrix(int n, int m) {
+        int[][] matrix = new int[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                matrix[i][j] = i * j;
+                System.out.print(matrix[i][j] + " , ");
+            }
+            System.out.println();
+        }
+
+    }
+
 }
 
 

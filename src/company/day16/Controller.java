@@ -178,31 +178,17 @@ public class Controller {
      */
 
     public void task9(int num) {
-        if (isPrime(num)) {
-            System.out.println(num);
-            return;
+        StringBuilder out = new StringBuilder();
+        int n = num;
+        int i = 2;
+        while (!isPrime(n)) {
+            if (n % i == 0 && isPrime(i)) {
+                out.append(i).append("*");
+                n = n / i;
+            } else i++;
         }
-        int num1 = num;
-
-        public static void primeFactors(int number){
-            String out="";
-            int n=number;
-            int i=2;
-            while (!isPrime(n)){
-                if(number%i==0&&isPrime(i)){
-                    out+=out+"*"+i;
-                    n=n/i;
-                    System.out.println(n);
-
-                }
-                else i++;
-
-            }
-            System.out.println(out);
-        }
-
-
+        System.out.println(out.toString() + n);
     }
-
-
 }
+
+

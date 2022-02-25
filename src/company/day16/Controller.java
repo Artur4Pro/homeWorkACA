@@ -207,9 +207,69 @@ public class Controller {
             }
             System.out.println();
         }
-
     }
 
+    /**
+     * Task 11
+     * Given numbers n and m. Create an array A [n] [m] and fill it as shown in the example.
+     * Input` 4   10
+     * Output`
+     * 0  1  3  6 10 14 18 22 26 30
+     * 2  4  7 11 15 19 23 27 31 34
+     * 5  8 12 16 20 24 28 32 35 37
+     * 9 13 17 21 25 29 33 36 38 39
+     */
+    public void printMatrix(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int val = 0;
+        int col;
+        for (int j = 0; j < m; j++) {
+            col = j;
+            for (int row = 0; (row < n && col >= 0); row++) {
+                matrix[row][col] = val;
+                val++;
+                col--;
+            }
+        }
+
+        for (int i = 1; i < n; i++) {
+            col = m - 1;
+            for (int row = i; (row < n && col >= 0); row++) {
+                matrix[row][col] = val;
+                val++;
+                col--;
+            }
+        }
+    }
+
+    /**
+     * 12
+     */
+    public static void snakePattern(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        int val = 0;
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < m; j++) {
+                    matrix[i][j] = val;
+                    val++;
+                }
+            } else {
+                for (int j = m - 1; j >= 0; j--) {
+                    matrix[i][j] = val;
+                    val++;
+                }
+            }
+        }
+    }
+
+
 }
+
+
+
+
 
 

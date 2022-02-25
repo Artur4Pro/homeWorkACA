@@ -9,9 +9,10 @@ public class Model {
 //        System.out.println(controller.isPrime(4));
 //        controller.palindromFromAToB(1600,2100);
 //        System.out.println(controller.firstLetterToUpper("STRING"));
-//        controller.xo(9);
+//        controller.xo();
 //        System.out.println(controller.geoProgress(3.2,1.5,4));
 //        controller.task9(49);
-//        controller.matrix(4,5);
+//        controller.matrix(4,4);
+        controller.matrix2(3,3);
     }
 }

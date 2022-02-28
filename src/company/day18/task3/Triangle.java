@@ -1,7 +1,6 @@
 package company.day18.task3;
 
 public class Triangle {
-
     private int sideA;
     private int sideB;
     private int sideC;

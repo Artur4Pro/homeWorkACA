@@ -13,6 +13,7 @@ public class Model {
 //        System.out.println(controller.geoProgress(3.2,1.5,4));
 //        controller.task9(49);
 //        controller.matrix(4,4);
-        controller.matrix2(3,3);
+//        controller.matrix2(3,3);
+        controller.stringCalculator("1+2*4/2");
     }
 }

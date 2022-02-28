@@ -1,5 +1,8 @@
 package company.day16;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
 
 public class Controller {
@@ -265,8 +268,81 @@ public class Controller {
         }
     }
 
+    /**
+     * 2+25*4-7/2
+     */
+    public boolean isDigit(char ch) {
+        return (ch >= '0' && ch <= '9');
 
+    }
+
+    public void stringCalculator(String x) {
+        int length = x.length();
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < length; i++) {  //analiza anum u haskanum ete tiva avelacnuma ete che nshany erku koxmani storaketov
+            if (isDigit(x.charAt(i))) {
+                str.append(x.charAt(i));
+            } else {
+                str.append("," + x.charAt(i) + ",");
+            }
+        }
+
+
+        String[] str2 = str.toString().split(",");     //ktrum em stringy ","-eric u dardznum Stringi array
+        List<String> list = new LinkedList<>();
+        int answere = 0;
+        int index = 0;
+        for (int i = 0; i < str2.length; i++) {
+            list.add(str2[i]);
+        }
+        int size = list.size();
+        int temp;
+        for (int i = 0; i < size; i++) {
+            if (list.get(i).equals("*")) {
+                temp = Integer.parseInt(list.get(i - 1)) * Integer.parseInt(list.get(i + 1));
+                list.set(i, Integer.toString(temp));
+                list.remove(i - 1);
+                list.remove(i);
+                size -= 2;
+                i=0;
+            }
+        }
+        for (int i = 0; i < size; i++) {
+            if (list.get(i).equals("/")) {
+                temp = Integer.parseInt(list.get(i - 1)) / Integer.parseInt(list.get(i + 1));
+                list.set(i, Integer.toString(temp));
+                list.remove(i - 1);
+                list.remove(i);
+                size -= 2;
+                i=0;
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (list.get(i).equals("+")) {
+                temp = Integer.parseInt(list.get(i - 1)) + Integer.parseInt(list.get(i + 1));
+                list.set(i, Integer.toString(temp));
+                list.remove(i - 1);
+                list.remove(i);
+                size -= 2;
+                i=0;
+            }
+        }
+
+        for (int i = 0; i < size; i++) {
+            if (list.get(i).equals("-")) {
+                temp = Integer.parseInt(list.get(i - 1)) - Integer.parseInt(list.get(i + 1));
+                list.set(i, Integer.toString(temp));
+                list.remove(i - 1);
+                list.remove(i);
+                size -= 2;
+                i=0;
+            }
+        }
+        System.out.println(list);
+    }
 }
+
 
 
 

@@ -23,6 +23,9 @@ public class PersonValidator {
 
     public static boolean isValidPassportId(String passportId) {
         int length = passportId.length();
+        if (passportId.length()<8){
+            return false;
+        }
         for (int i = 3; i < length - 2; i++) {
             if (passportId.charAt(i) < '0' || passportId.charAt(i) > '9') {
                 return false;

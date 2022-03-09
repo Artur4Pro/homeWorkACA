@@ -7,9 +7,9 @@ public class Main4 {
                           new Circle(5),
                           new Rectangle(2, 3)};
 
-        for (int i = 0; i < shapes.length; i++) {
-            System.out.print("area " + shapes[i].area() + " , ");
-            System.out.println("perimetr " + shapes[i].perimeter());
+        for (Shape shape : shapes) {
+            System.out.print("area " + shape.area() + " , ");
+            System.out.println("perimetr " + shape.perimeter());
         }
 
     }

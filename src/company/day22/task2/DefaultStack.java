@@ -1,9 +1,14 @@
 package company.day22.task2;
 
 public class DefaultStack implements Stack {
-    final int MAX_SIZE = 5 ;
-    private int[] nums = new int[MAX_SIZE];
-    static int index =0;
+    private final static int MAX_SIZE = 5 ;
+    private final int[] nums ;
+    private int index ;
+
+    public DefaultStack() {
+        nums = new int[MAX_SIZE];
+        index=0;
+    }
 
     @Override
     public void push(int val) {
@@ -15,10 +20,10 @@ public class DefaultStack implements Stack {
     }
 
     @Override
-    public void pop() {
+    public int pop() {
         index--;
         if (index<0){throw new  EmptyStackException("EmptyStackException");}
-        System.out.println(nums[index]);
+        return nums[index];
     }
 
 

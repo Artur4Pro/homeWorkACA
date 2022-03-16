@@ -9,6 +9,7 @@ public class Main {
         defaultStack.push(4);
         defaultStack.push(5);
 
+
         System.out.println(defaultStack.pop());
         System.out.println(defaultStack.pop());
         System.out.println(defaultStack.pop());

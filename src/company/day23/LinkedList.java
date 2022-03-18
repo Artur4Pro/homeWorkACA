@@ -70,6 +70,13 @@ public class LinkedList implements List {
 
     @Override
     public void delete(int index) {
+        if (index==0){
+            head = head.next;
+        }
+        Node node = head;
+        for (int i = 0; i < index-1; i++) {
+            
+        }
 
     }
 

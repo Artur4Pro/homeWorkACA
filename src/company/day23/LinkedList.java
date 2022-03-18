@@ -1,11 +1,14 @@
 package company.day23;
 
 
+import java.util.Iterator;
+
 public class LinkedList implements List {
 
     private static int size;
 
-    private class Node {
+
+    private static class Node {
 
         private int val;
         private Node next;
@@ -59,6 +62,11 @@ public class LinkedList implements List {
             size++;
             return;
         }
+        if (index ==0){
+            head=new Node(val,head);
+            size++;
+            return;
+        }
         Node node = head;
         for (int i = 0; i < index - 1; i++) {
             node = node.next;
@@ -70,14 +78,51 @@ public class LinkedList implements List {
 
     @Override
     public void delete(int index) {
-        if (index==0){
+        if (index == 0) {
             head = head.next;
+            size--;
+            return;
         }
         Node node = head;
-        for (int i = 0; i < index-1; i++) {
-            
+        for (int i = 0; i < index - 1; i++) {
+            node = head.next;
+        }
+        node.next = node.next.next;
+        size--;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder("[");
+        for (int i = 0; i < size ; i++) {
+            s.append(this.get(i)).append("->");
+        }
+        s.append(("null]"));
+        return s.toString();
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Integer>{
+
+        private int size;
+        private Node node = head;
+
+        @Override
+        public boolean hasNext() {
+            return this.size<LinkedList.size;
         }
 
+        @Override
+        public Integer next() {
+            Integer value = node.val;
+            node=node.next;
+            size++;
+            return value ;
+        }
     }
 
 }

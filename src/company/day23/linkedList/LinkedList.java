@@ -1,5 +1,7 @@
-package company.day23;
+package company.day23.linkedList;
 
+
+import company.day23.List;
 
 import java.util.Iterator;
 

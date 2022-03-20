@@ -23,6 +23,9 @@ public class ArrayList implements List {
 
     @Override
     public int get(int index) {
+        if (index>counterElements){
+            throw new IndexOutOfBoundsException();
+        }
         return arrayLists[index];
     }
 
@@ -43,6 +46,10 @@ public class ArrayList implements List {
 
     @Override
     public void add(int index, int val) {
+        if (index>counterElements){
+            throw new IndexOutOfBoundsException();
+        }
+
         int element = arrayLists[index];
         arrayLists[index]=val;
         counterElements++;
@@ -67,6 +74,9 @@ public class ArrayList implements List {
 
     @Override
     public void delete(int index) {
+        if (index>counterElements){
+            throw new IndexOutOfBoundsException();
+        }
         for (int i = index; i < counterElements; i++) {
             arrayLists[i]=arrayLists[i+1];
         }

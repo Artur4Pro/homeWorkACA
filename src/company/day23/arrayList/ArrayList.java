@@ -10,7 +10,14 @@ public class ArrayList implements List {
     private int[] arrayLists = new int[defaultSize];
     private int counterElements;
 
-
+    private void defaultSizeEnlarger (){
+        defaultSize += (defaultSize * 0.5);
+        int[] constant = arrayLists;
+        arrayLists = new int[defaultSize];
+        for (int i = 0; i < counterElements; i++) {
+            arrayLists[i] = constant[i];
+        }
+    }
     @Override
     public int size() {
         return counterElements;
@@ -35,12 +42,7 @@ public class ArrayList implements List {
         counterElements++;
 
         if (counterElements == defaultSize) {
-            defaultSize += (defaultSize * 0.5);
-            int[] constant = arrayLists;
-            arrayLists = new int[defaultSize];
-            for (int i = 0; i < counterElements; i++) {
-                arrayLists[i] = constant[i];
-            }
+            defaultSizeEnlarger();
         }
     }
 
@@ -55,12 +57,7 @@ public class ArrayList implements List {
         counterElements++;
 
         if (counterElements == defaultSize) {
-            defaultSize += (defaultSize * 0.5);
-            int[] constant = arrayLists;
-            arrayLists = new int[defaultSize];
-            for (int i = 0; i < counterElements; i++) {
-                arrayLists[i] = constant[i];
-            }
+            defaultSizeEnlarger();
         }
 
         for (int i = index + 1; i < counterElements; i++) {

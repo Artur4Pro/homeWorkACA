@@ -1,8 +1,7 @@
 package company.day23;
 
 import company.day23.arrayList.ArrayList;
-
-import java.util.List;
+import company.day25.ArrayListUtils;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,23 +23,29 @@ public class Main {
 
 
         ArrayList arrayList = new ArrayList();
-        arrayList.add(0);
+        arrayList.add(8);
         arrayList.add(1);
-        arrayList.add(2);
+        arrayList.add(1);
+        arrayList.add(3);
         arrayList.add(3);
         arrayList.add(4);
-        arrayList.add(5);
-        arrayList.add(6);
+        arrayList.add(4);
+        arrayList.add(7);
         arrayList.add(7);
         arrayList.add(8);
+        arrayList.add(8);
         arrayList.add(9);
-        arrayList.add(1, 10);
-        arrayList.delete(1);
 
+//        System.out.println(ArrayListUtils.isDuplicate(arrayList));
+//        ArrayListUtils.printUniqueElement(arrayList);
+//        System.out.println(ArrayListUtils.countOfDuplicate(arrayList));
+//        System.out.println(ArrayListUtils.firstUniqueElement(arrayList));
 
-        for (int x : arrayList) {
-            System.out.println(x);
-        }
+//        for (int x : arrayList) {
+//            System.out.println(x);
+//        }
+
+        System.out.println(ArrayListUtils.lengthOfTheLongestSubstring("arab"));
 
 
     }

@@ -1,4 +1,4 @@
-package company.day23.linkedList;
+package company.day23;
 
 import company.day23.arrayList.ArrayList;
 

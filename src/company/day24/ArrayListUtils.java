@@ -1,4 +1,4 @@
-package company.day25;
+package company.day24;
 
 import company.day23.arrayList.ArrayList;
 

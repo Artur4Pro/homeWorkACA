@@ -13,6 +13,7 @@ public class Methods {
     }
 
 
+
     public static boolean palindrom(String n) {
         int length = n.length();
         if (length == 1) {
@@ -23,4 +24,12 @@ public class Methods {
         }
         return n.charAt(0) == n.charAt(length - 1) && palindrom(n.substring(1, length-1));
     }
+    public static void palindrom2 (int n) {
+        int k = n;
+        while (k>1){
+            k=n/10;
+        }
+        System.out.println(k);
+    }
+
 }

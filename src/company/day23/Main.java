@@ -1,7 +1,7 @@
 package company.day23;
 
 import company.day23.arrayList.ArrayList;
-import company.day25.ArrayListUtils;
+import company.day24.ArrayListUtils;
 
 public class Main {
     public static void main(String[] args) {

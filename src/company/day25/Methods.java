@@ -145,9 +145,9 @@ public class Methods {
         }
         if (str.startsWith("x")) {
             return xMoveToTheEnd(str.substring(1)) + "x";
-        } else {
-            return str.charAt(0) + xMoveToTheEnd(str.substring(1));
         }
+        return str.charAt(0) + xMoveToTheEnd(str.substring(1));
+
 
     }
 
@@ -169,9 +169,9 @@ public class Methods {
         }
         if (str.charAt(0) == str.charAt(1)) {
             return cleanedString(str.substring(1));
-        } else {
-            return str.charAt(0) + cleanedString(str.substring(1));
         }
+        return str.charAt(0) + cleanedString(str.substring(1));
+
     }
 
 
@@ -197,10 +197,75 @@ public class Methods {
      * 12.Given a string containing only decimal digits. Find and display the largest digit.
      */
 
-//    public static int maxDigit (String str){
-//        int max = 0;
-//        if (str.length()==0){
-//            return max;
-//        }
-//    }
+    public static String maxDigit(String str) {
+        if (str.length() == 1) {
+            return str;
+        }
+        if (str.charAt(0) > str.charAt(1)) {
+            return maxDigit(str.substring(1) + str.charAt(0));
+        }
+        return maxDigit(str.substring(1));
+
+    }
+
+    /**
+     * 13.You are given a string containing numbers and English letters (uppercase and lowercase).
+     * Find and display the number of digits.
+     */
+
+    public static int countOfNumbers(String str) {
+        if (str.length() == 0) {
+            return 0;
+        }
+        if (str.charAt(0) >= '0' && str.charAt(0) <= '9') {
+            return 1 + countOfNumbers(str.substring(1));
+        }
+        return countOfNumbers(str.substring(1));
+
+    }
+
+    /**
+     * 14.Given a string containing only English letters (uppercase and lowercase).
+     * Add the ‘*’ (asterisk) character between letters (you don’t need to add ‘*’ before the first
+     * letter and after the last).
+     * <p>
+     * Example ` LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO
+     * <p>
+     * L*I*t*B*e*o*F*L*c*S*G*B*O*F*Q*x*M*H*o*I*u*D*D*W*c*q*c*V*g*k*c*R*o*A*e*o*c*X*O
+     */
+
+    public static StringBuilder addAsterisk(String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        if (str.length() == 1) {
+            return stringBuilder.append(str.charAt(0));
+        }
+        return stringBuilder.append(str.charAt(0)).append('*').append(addAsterisk(str.substring(1)));
+    }
+
+    /**
+     * 15.Given a string containing only English letters (uppercase and lowercase).
+     * Add opening and closing parentheses according to the following pattern:
+     * "example" -> "(e (x (a (m) p) l) e)" (Added opening parentheses to the middle,
+     * closing parentheses after the middle. In case the string length is even there must be 2
+     * characters in the brackets in the middle. ("card -> (c (ar) d)" but not "(c (a () r) d)").
+     * <p>
+     * Example`
+     * LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO
+     * <p>
+     * (L(I(t(B(e(o(F(L(c(S(G(B(O(F(Q(x(M(H(o(I)u)D)D)W)c)q)c)V)g)k)c)R)o)A)e)o)c)X)O)
+     */
+
+    public static StringBuilder addParentheses(String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+        String str1 = str.substring(str.length() / 2);
+        if (str.length() == 0) {
+            return stringBuilder;
+        }
+        if (str.length() == str.length() / 2) {
+            return stringBuilder.append('(').append(str.charAt(0)).append(addParentheses(str.substring(1)));
+        } else {
+            return stringBuilder.append(str1.charAt(0)).append(')').append(addParentheses(str.substring(1)));
+        }
+    }
 }

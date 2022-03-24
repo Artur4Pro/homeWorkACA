@@ -14,7 +14,10 @@ public class Main {
 //        System.out.println(Methods.revers("Arab"));
 //        System.out.println(Methods.xMoveToTheEnd("xxre"));
 //        System.out.println(Methods.cleanedString("yyabbbcdd"));
-        System.out.println(Methods.isPrime(12, 1));
-
+//        System.out.println(Methods.isPrime(12, 1));
+//        System.out.println(Methods.maxDigit("123456"));
+//        System.out.println(Methods.countOfNumbers("12a3sd4"));
+//        System.out.println(Methods.addAsterisk("LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO"));
+        System.out.println(Methods.addParentheses("LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO"));
     }
 }

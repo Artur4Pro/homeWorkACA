@@ -18,6 +18,8 @@ public class Main {
 //        System.out.println(Methods.maxDigit("123456"));
 //        System.out.println(Methods.countOfNumbers("12a3sd4"));
 //        System.out.println(Methods.addAsterisk("LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO"));
-        System.out.println(Methods.addParentheses("LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO"));
+//        System.out.println(Methods.addParentheses("LItBeoFLcSGBOFQxMHoIuDDWcqcVgkcRoAeocXO"));
+//        System.out.println(Methods.miroredText("qwerty)"));
+
     }
 }

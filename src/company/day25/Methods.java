@@ -256,16 +256,31 @@ public class Methods {
      * (L(I(t(B(e(o(F(L(c(S(G(B(O(F(Q(x(M(H(o(I)u)D)D)W)c)q)c)V)g)k)c)R)o)A)e)o)c)X)O)
      */
 
-    public static StringBuilder addParentheses(String str) {
+    public static StringBuilder addParentheses(String str){
+        String str1 =str;
+        int length = str1.length();
+        return addParentheses(str1,length);
+    }
+    private static StringBuilder addParentheses(String str, int length) {
         StringBuilder stringBuilder = new StringBuilder();
-        String str1 = str.substring(str.length() / 2);
         if (str.length() == 0) {
             return stringBuilder;
         }
-        if (str.length() == str.length() / 2) {
+        if (str.length() > length / 2) {
             return stringBuilder.append('(').append(str.charAt(0)).append(addParentheses(str.substring(1)));
         } else {
-            return stringBuilder.append(str1.charAt(0)).append(')').append(addParentheses(str.substring(1)));
+            return stringBuilder.append(str.charAt(0)).append(')').append(addParentheses(str.substring(1)));
         }
     }
+
+    /**
+     *16.Given a string containing only English letters (uppercase and lowercase) and opening brackets.
+     *  Form a new line by adding a "mirrored" line with closing brackets to the right.
+     * "(abc (def (g " -> "(abc (def (gg) fed) cba)"
+     **/
+
+//    public static StringBuilder miroredText (String str) {
+//        StringBuilder stringBuilder = new StringBuilder();
+//        return stringBuilder.append(str).append((str).reverse());
+//    }
 }
